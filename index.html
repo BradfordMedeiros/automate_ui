@@ -10,6 +10,14 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
     <script src="lib/angular-widget-grid.min.js"></script>
     <script src="demo.js"></script>
+    <script src="mqtt_widget.js"></script>
+
+    <script>
+      console.log("initializing app");
+      initialize(app);
+
+    </script>
+
   </head>
   <body ng-app="widgetGridDemo">
 
@@ -42,10 +50,19 @@
 
      <div >
       <wg-grid columns="{{demo.columns}}" rows="{{demo.rows}}" options="demo.options" class="demo-grid" id="demo-grid">
-       
 
-        <wg-widget  wg-resizable wg-movable editable="true" position="{ top: 3, height: 3, left: 3, width: 3 }">
+
+        <wg-widget  wg-resizable wg-movable editable="{{demo.editable}}" position="{ top: 3, height: 3, left: 3, width: 3 }">
+          <div>
             <test></test>
+            <test></test>
+          </div>
+        </wg-widget>
+        <wg-widget  wg-resizable wg-movable editable="{{demo.editable}}" position="{ top: 6, height: 3, left: 6, width: 3 }">
+          <div>
+            <test></test>
+            <test></test>
+          </div>
         </wg-widget>
       </wg-grid>
      </div>

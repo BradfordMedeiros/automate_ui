@@ -42,65 +42,58 @@ var mqtt_wid = function(publish_function){
     };
     
     this.create_controller = function(app){
-        var self = this;
-        
         var controller_name = "test_controller";
         var controller = app.controller(controller_name,function($scope){
             $scope.temp = 0;
-            $scope.update = function(){
-                $scope.name = 39;
-            };
-            
             self.scope = $scope;
-           
         });
         return controller_name;
     };
+
+    this.initialize = function(app){
+        var the_controller = self.create_controller(app);
+        app.directive("test",function(){
+            var controller_name = r.create_controller(app);
+            console.log("controller : ",controller_name);
+            return{
+                controller: the_controller,
+                template: function(){ console.log('generated'); return self.get_template()}
+            };
+        });
+    }
 };
+
 
 
 mqtt_wid.prototype = mqtt_interface.prototype;
 
+var initialize = function(app){
 
 
-
-var app = angular.module('widgetGridDemo', ['widgetGrid'])
-app.controller('mqtt_controller', function ($scope, $timeout) {
-  var vm = this;
-  
-  vm.columns = 30;
-  vm.rows = [30,31];
-
-})
-
-r = new mqtt_wid();
-app.directive("test",function(){
-    var controller_name = r.create_controller(app);
-    console.log("controller : ",controller_name);
-    return {
-        template: r.get_template(),
-        controller: controller_name
-    };
-});
-
+    r = new mqtt_wid();
+    r.initialize(app);
 // need to create custom directive or mqtt widget
-app.directive('randomBgColor', function () {
+
+};
+
+
+/*app.directive('randomBgColor', function () {
   return {
-    /*link: function (scope, element) {
+    link: function (scope, element) {
       var r = Math.floor(Math.random() * 60) + 130,
           g = Math.floor(Math.random() * 60) + 130,
           b = Math.floor(Math.random() * 60) + 130;
       var bgColor = 'rgb(' + r + ',' + g + ',' + b + ')'; 
       element.css('background-color', bgColor);
-    }*/
-    restrict: 'E',
+    },
+   //restrict: 'E',
     template: function(e,a){
         console.log('e is ',e);
         console.log('a is ',a);
         return r.get_template();
     }
   };
-})
+})*/
 
 
 
