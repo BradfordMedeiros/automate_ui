@@ -6,6 +6,9 @@
 .wg-widget {
   position: absolute;
   z-index: 5;
+  box-shadow: 1px 1px 5px black;
+  border-radius: 5%;
+  overflow: hidden;
 }
 
 .wg-grid-overlay,
@@ -15,6 +18,8 @@
   position: absolute;
   height: 100%;
   width: 100%;
+  box-sizing: border-box;
+
 }
 
 .wg-widget-content {
@@ -76,6 +81,7 @@
   width: 0;
   height: 0;
   z-index: 1;
+
 }
 
 .wg-resize-diag:hover {

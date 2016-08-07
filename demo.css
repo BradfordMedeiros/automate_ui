@@ -2,6 +2,36 @@
   width: device-width;
 }
 
+
+
+test{
+  display: flex;
+  background: lightslategrey;
+  color: whitesmoke;
+  font-family: "Engravers MT";
+  font-size: 250%;
+  border: 5px dotted black;
+  padding: 5%;
+}
+
+test h2{
+  border: 1px dashed black;
+  box-shadow: 2px 2px 2px 2px black;
+  text-align: center;
+
+}
+
+wg-grid{
+  background: black;
+}
+wg-widget{
+  border: 1px solid black;
+}
+mqtt{
+  border: 1px solid blue;
+}
+
+
 body {
   font-family: 'Open Sans', sans-serif;
   margin: 0;
@@ -65,7 +95,7 @@ body {
   position: absolute;
   bottom: 0;
   z-index: 15;
-  
+
   background-color: rgba(0, 0, 0, 0.4);
   color: #e0e0e0;
   display: inline-block;

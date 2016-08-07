@@ -10,7 +10,7 @@ app.controller('DemoController', function ($scope, $timeout) {
   vm.additionPossible = true;
   
   vm.options = {
-    showGrid: false,
+    showGrid: true,
     highlightNextPosition: false
   };
   
@@ -70,7 +70,7 @@ app.controller('DemoController', function ($scope, $timeout) {
     vm.editable = !vm.editable;
     vm.options.showGrid = vm.editable;
   }
-  
+
   function updateGridSize() {
     $timeout(function () {
       var grid = document.getElementById('demo-grid');
@@ -80,82 +80,6 @@ app.controller('DemoController', function ($scope, $timeout) {
   }
 })
 
-
-
-
-
-var mqtt_interface = function(mqtt_topics, publish_function){
-    throw (new Error("cannot implement an interface directly - extend the prototype chain and override methods"));
-};
-mqtt_interface.prototype.on_subscription = function(subscriptions,message){
-    throw (new Error("cannot implement an interface directly - extend the prototype chain and override methods"));
-};
-
-// sets the controller for your interface
-// should only be called by external code 
-mqtt_interface.prototype.create_controller = function($scope){
-    throw (new Error("cannot implement an interface directly - extend the prototype chain and override methods"));
-};
-
-// probably
-// mqtt_interface.prototype.generate_reusable_html() ---> and then can just link to this
-var do_something_mqtt = function(mqtt_int){
-    if (!(mqtt_int instanceof mqtt_interface)){
-        throw (new Error("must implement interface"));
-    }
-};
-
-var x = {val: 20};
-var mqtt_wid = function(publish_function){
-    
-    var self = this;
-    this.on_subscription= function(subscription){
-        // this is the override
-        if (subscription['temp']){
-            self.scope.$apply(function(){
-                self.scope.temp = subscription['temp']
-            });
-        }
-    };
-    
-    this.get_template = function(){
-        return "<div> temperature:  {{temp}}--</div>";
-    };
-    // gets the subscriptions we care about for this controller
-    this.get_subscriptions = function(){
-        return "temperature";
-    };
-    
-    this.create_controller = function(app){
-        var self = this;
-        
-        var controller_name = "the_test_controller";
-        var controller = app.controller(controller_name,function($scope){
-            $scope.temp = 0;
-            
-            self.scope = $scope;
-           
-        });
-        return controller_name;
-    };
-};
-
-
-mqtt_wid.prototype = mqtt_interface.prototype;
-
-
-
-
-
-r = new mqtt_wid();
-app.directive("test",function(){
-    var controller_name = r.create_controller(app);
-    console.log("controller : ",controller_name);
-    return {
-        template: r.get_template(),
-        controller: controller_name
-    };
-});
 
 
 

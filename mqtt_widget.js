@@ -26,7 +26,7 @@ var mqtt_wid = function(publish_function){
     var self = this;
     this.on_subscription= function(subscription){
         // this is the override
-        if (subscription['temp']){
+        if (subscription['temp'] !==undefined){
             self.scope.$apply(function(){
                 self.scope.temp = subscription['temp']
             });
@@ -34,7 +34,7 @@ var mqtt_wid = function(publish_function){
     };
     
     this.get_template = function(){
-        return "<div> temperature:  {{temp}}--</div>";
+        return "<div>  temperature: <hr> <h2>{{temp}}<h2> </div>";
     };
     // gets the subscriptions we care about for this controller
     this.get_subscriptions = function(){
@@ -43,18 +43,18 @@ var mqtt_wid = function(publish_function){
     
     this.create_controller = function(app){
         var controller_name = "test_controller";
-        var controller = app.controller(controller_name,function($scope){
-            $scope.temp = 0;
-            self.scope = $scope;
+        var controller = app.controller(controller_name,function($rootScope){
+            $rootScope.temp = 0;
+            self.scope = $rootScope;
         });
         return controller_name;
     };
 
     this.initialize = function(app){
         var the_controller = self.create_controller(app);
+        console.log('created controller ');
         app.directive("test",function(){
-            var controller_name = r.create_controller(app);
-            console.log("controller : ",controller_name);
+            console.log("controller : ",the_controller);
             return{
                 controller: the_controller,
                 template: function(){ console.log('generated'); return self.get_template()}
@@ -71,6 +71,7 @@ var initialize = function(app){
 
 
     r = new mqtt_wid();
+
     r.initialize(app);
 // need to create custom directive or mqtt widget
 
