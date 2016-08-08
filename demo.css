@@ -3,22 +3,33 @@
 }
 
 
+mqttcolor{
+    border: 2px solid grey;
+    
+}
+
 
 test{
-  display: flex;
-  background: lightslategrey;
+  padding: 30%;
+
+  background: linear-gradient(grey,lightslategray,lightslategrey);
   color: whitesmoke;
   font-family: "Engravers MT";
   font-size: 250%;
   border: 5px dotted black;
-  padding: 5%;
+  width: 4em;
+  height: 10em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
 }
 
 test h2{
   border: 1px dashed black;
   box-shadow: 2px 2px 2px 2px black;
   text-align: center;
-
+  font-size: 1em;
 }
 
 wg-grid{

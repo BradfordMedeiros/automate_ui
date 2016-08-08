@@ -20,7 +20,6 @@ var do_something_mqtt = function(mqtt_int){
     }
 };
 
-var x = {val: 20};
 var mqtt_wid = function(publish_function){
     
     var self = this;
@@ -34,7 +33,7 @@ var mqtt_wid = function(publish_function){
     };
     
     this.get_template = function(){
-        return "<div>  temperature: <hr> <h2>{{temp}}<h2> </div>";
+        return "<div>  temperature <hr> <h2>{{temp}}<h2> </div>";
     };
     // gets the subscriptions we care about for this controller
     this.get_subscriptions = function(){
@@ -62,17 +61,67 @@ var mqtt_wid = function(publish_function){
         });
     }
 };
-
-
-
 mqtt_wid.prototype = mqtt_interface.prototype;
+
+var mqtt_color_widget = function(){
+    
+    var self = this;
+    this.on_subscription= function(subscription){
+        // this is the override
+        if (subscription['color'] !==undefined){
+            self.scope.$apply(function(){
+                self.scope.color = subscription['color']
+            });
+        }
+    };
+    
+    this.get_template = function(){
+        return "<div style='background: {{color}}; height: 100%'>yo yo </div>";
+    };
+    // gets the subscriptions we care about for this controller
+    this.get_subscriptions = function(){
+        return "temperature";
+    };
+    
+    this.create_controller = function(app){
+        var controller_name = "color_controller";
+        var controller = app.controller(controller_name,function($rootScope){
+            $rootScope.color = "blue";
+            self.scope = $rootScope;
+        });
+        return controller_name;
+    };
+
+    this.initialize = function(app){
+        var the_controller = self.create_controller(app);
+        console.log('created controller ');
+        app.directive("mqttcolor",function(){
+            console.log("controller : ",the_controller);
+            return{
+                controller: the_controller,
+                template: function(){ console.log('generated color template'); return self.get_template()}
+            };
+        });
+    }
+};
+mqtt_color_widget.prototype = mqtt_interface.prototype;
+
+
+
+
+
+
+
+
 
 var initialize = function(app){
 
 
-    r = new mqtt_wid();
-
-    r.initialize(app);
+    wid = new mqtt_wid();
+    color = new mqtt_color_widget();
+    
+    wid.initialize(app);
+    color.initialize(app);
 // need to create custom directive or mqtt widget
 
 };
