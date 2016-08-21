@@ -1,32 +1,26 @@
 
 
-var mqtt = require("mqtt");
 var mqtt_widget = require("./mqtt_widget");
-
-
-
-var client = mqtt.connect("mqtt://localhost");
-
-
-var mqtt_widgets_manager = function(){
+var mqtt_widgets_manager = function(client){
     this.the_subscriptions = { };
     this.id_count = 0;
+    this.client = client;
 };
 
 mqtt_widgets_manager.prototype.add_widget = function(widget){
     if (typeof(mqtt_widget) !== typeof(widget)){
-        throw (new Error("Cannot add a widget that does not implement the mqtt widget interface")):
+        throw (new Error("Cannot add a widget that does not implement the mqtt widget interface"));
     }
     
     var the_subscriptions = widget.get_subscriptions();
     for (var i = 0 ; i < subscriptions.length ; i++){
-        this._add_subscription(client,widget);
+        this._add_subscription(this.client,widget);
     }
 };
 
 mqtt_widgets_manager.prototype.remove_widget = function(widget){
     if (typeof(mqtt_widget) !== typeof(widget)){
-        throw (new Error("Cannot remove a widget that does not implement the mqtt widget interface")):
+        throw (new Error("Cannot remove a widget that does not implement the mqtt widget interface"));
     }
     
     var the_subscriptions = this.subscriptions;
@@ -43,9 +37,9 @@ mqtt_widgets_manager.prototype.remove_widget = function(widget){
     }
 };
 
-mqtt_widgets_manager.prototype._add_subscription(client, widget){
+mqtt_widgets_manager.prototype._add_subscription  = function(client, widget){
     if (client == undefined || widget == undefined){
-        throw (new Error("undefined parameters in add subscription));
+        throw (new Error("undefined parameters in add subscription"));
     }
     var the_subscriptions = [].concat(widget.get_subscriptions());
     for (var i = 0 ; i < subscriptions.length ; i++){
@@ -54,12 +48,11 @@ mqtt_widgets_manager.prototype._add_subscription(client, widget){
     }
 };
 
-mqtt_widgets_manager.prototype._remove_subscription(client, subscriptions){
+mqtt_widgets_manager.prototype._remove_subscription = function(client, subscriptions){
     var the_subscriptions = [ ].concat(subscriptions);
     for (var i = 0 ; i < subscriptions.length ; i++){
-        the_subscriptions[subscr
     }
 };
 
 
-
+module.exports = mqtt_widgets_manager;
