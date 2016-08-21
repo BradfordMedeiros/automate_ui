@@ -36,6 +36,7 @@ var mqtt_wid = function(publish_function){
             return{
                 controller: the_controller,
                 template: function(){ console.log('generated'); return self.get_template()}
+              
             };
         });
     }

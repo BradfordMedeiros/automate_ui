@@ -4,6 +4,7 @@
 mqtt_interface = require("./mqtt_widget.js");
 temperature_display = require("./widgets/temperature_display.js");
 mqtt_color_widget = require("./widgets/color_widget.js");
+angular  = require("angular");
 
 initialize = function(app){
 

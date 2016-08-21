@@ -2,16 +2,19 @@
   width: device-width;
 }
 
-
 mqttcolor{
-    border: 2px solid grey;
-    
+    border: 5px solid grey;
+    opacity: 0.5;
 }
 
 
+#the_grid{
+    background: linear-gradient(black,black,black,black,slategrey);
+}
+
 test{
   padding: 30%;
-
+  opacity: 0.7;
   background: linear-gradient(grey,lightslategray,lightslategrey);
   color: whitesmoke;
   font-family: "Engravers MT";
@@ -24,6 +27,7 @@ test{
   justify-content: center;
 
 }
+
 
 test h2{
   border: 1px dashed black;

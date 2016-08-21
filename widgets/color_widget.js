@@ -36,12 +36,21 @@ var mqtt_color_widget = function(){
             console.log("controller : ",the_controller);
             return{
                 controller: the_controller,
+                link: function(scope,elem,attrs){
+                    /*console.log("linking ");
+                    console.log(angular);
+                    angular.element(attrs.options).css({'border': '10px solid grey'}); //    border: 5px solid grey;
+                    */
+                    elem.bind("click",function(){
+                        console.log("temp thing clicked");
+                        self.on_subscription({"color": "orange"});
+                    });
+                },
                 template: function(){ console.log('generated color template'); return self.get_template()}
             };
         });
     }
 };
 mqtt_color_widget.prototype = mqtt_interface.prototype;
-
 
 module.exports= mqtt_color_widget;
