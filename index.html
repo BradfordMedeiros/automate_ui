@@ -11,15 +11,14 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
     <script src="lib/angular-widget-grid.min.js"></script>
     <script src="demo.js"></script>
-    <script src="mqtt_widget.js"></script>
-
-
+    
+        <script src="main_browser.js"></script>
 
     <script>
-      console.log("initializing app");
-      initialize(app);
-
+        console.log("initialized");
+        initialize(app);
     </script>
+   
 
   </head>
   <body ng-app="widgetGridDemo">
@@ -54,7 +53,7 @@
      <div >
 
 
-       <wg-grid columns="{{demo.columns}}" rows="{{demo.rows}}" options="demo.options" class="demo-grid" id="demo-grid">
+       <wg-grid id="the_grid" columns="{{demo.columns}}" rows="{{demo.rows}}" options="demo.options" class="demo-grid" id="demo-grid">
 
     
 
