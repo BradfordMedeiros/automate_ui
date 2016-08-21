@@ -13,7 +13,7 @@ mqtt_widgets_manager.prototype.add_widget = function(widget){
     }
     
     var the_subscriptions = widget.get_subscriptions();
-    for (var i = 0 ; i < subscriptions.length ; i++){
+    for (var i = 0 ; i < the_subscriptions.length ; i++){
         this._add_subscription(this.client,widget);
     }
 };
@@ -42,9 +42,12 @@ mqtt_widgets_manager.prototype._add_subscription  = function(client, widget){
         throw (new Error("undefined parameters in add subscription"));
     }
     var the_subscriptions = [].concat(widget.get_subscriptions());
-    for (var i = 0 ; i < subscriptions.length ; i++){
-        the_subscriptions[subscriptions[i]].push(widget)
-        console.log("WARNING NEED TO ACTUALLY SUBSCRIBE TO MQTT TOPIC HERE");
+    for (var i = 0 ; i < the_subscriptions.length ; i++){
+        if (this.the_subscriptions[the_subscriptions[i]] === undefined){
+            this.the_subscriptions[the_subscriptions[i]] = [ ]
+            client.subscribe(the_subscriptions[i]);
+        }
+        this.the_subscriptions[the_subscriptions[i]].push(widget)
     }
 };
 
