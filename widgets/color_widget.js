@@ -5,9 +5,12 @@ var mqtt_color_widget = function(){
     var self = this;
     this.on_subscription= function(subscription){
         // this is the override
-        if (subscription['color'] !==undefined){
+        
+        console.log("mqtt color widget got update",subscription);
+        obj = subscription;
+        if (subscription['/states/color'] !==undefined){
             self.scope.$apply(function(){
-                self.scope.color = subscription['color']
+                self.scope.color = subscription['/states/color']
             });
         }
     };
@@ -17,7 +20,7 @@ var mqtt_color_widget = function(){
     };
     // gets the subscriptions we care about for this controller
     this.get_subscriptions = function(){
-        return ["color"];
+        return ["/states/color"];
     };
     
     this.create_controller = function(app){

@@ -1,7 +1,7 @@
 var app = angular.module('widgetGridDemo', ['widgetGrid']);
 
 app.controller('DemoController', function ($scope, $timeout) {
-  var vm = this;
+  vm = this;
   
   vm.columns = 30;
   vm.rows = 20;
@@ -10,7 +10,7 @@ app.controller('DemoController', function ($scope, $timeout) {
   vm.additionPossible = true;
   
   vm.options = {
-    showGrid: true,
+    showGrid: false,
     highlightNextPosition: false
   };
   

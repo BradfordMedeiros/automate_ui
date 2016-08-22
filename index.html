@@ -13,7 +13,7 @@
 
     <script src="lib/angular-widget-grid.min.js"></script>
     <script src="demo.js"></script>
-    
+
 
     <script>
         console.log("initialized");
@@ -27,7 +27,7 @@
     <div ng-controller="DemoController as demo">
 
       <div class="demo-header">
-        <a class="demo-title" title="angular-widget-grid on GitHub" href="https://github.com/patbuergin/angular-widget-grid">angular-widget-grid</a>
+        <a class="demo-title" >AUTOMATE</a>
         <div class="demo-config">
           <div class="demo-config-grid hidden-xs">
             <label for="columns">Columns</label>
@@ -56,18 +56,12 @@
 
        <wg-grid id="the_grid" columns="{{demo.columns}}" rows="{{demo.rows}}" options="demo.options" class="demo-grid" id="demo-grid">
 
-    
+           <wg-widget wg-resizable wg-movable editable="{{demo.editable}}" ng-repeat="widget in demo.greetingWidgets" position="widget.position">
+               <test></test>
+           </wg-widget>
 
-        <wg-widget  wg-resizable wg-movable editable="{{demo.editable}}" position="{ top: 3, height: 3, left: 3, width: 3 }">
-                  <mqttcolor></mqttcolor>
-
-        </wg-widget>
-        <wg-widget  wg-resizable wg-movable editable="{{demo.editable}}" position="{ top: 6, height: 8, left: 6, width: 15 }">
- 
-            <test></test>
-      
-        </wg-widget>
-      </wg-grid>
+           
+       </wg-grid>
      </div>
  
       

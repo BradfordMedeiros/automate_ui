@@ -4,11 +4,16 @@ var mqtt_wid = function(publish_function){
     var self = this;
     this.on_subscription= function(subscription){
         // this is the override
-        if (subscription['temp'] !==undefined){
+        
+        console.log("received subscription");
+        the = subscription;
+        if (subscription['/states/temperature'] !==undefined){
             self.scope.$apply(function(){
-                self.scope.temp = subscription['temp']
+                self.scope.temp = subscription['/states/temperature']
             });
-        }
+        }else{
+            console.log("warning received subscription for a topic not subscribed to");
+        }   
     };
     
     this.get_template = function(){
@@ -16,7 +21,7 @@ var mqtt_wid = function(publish_function){
     };
     // gets the subscriptions we care about for this controller
     this.get_subscriptions = function(){
-        return ["temperature"];
+        return ["/states/temperature"];
     };
     
     this.create_controller = function(app){
