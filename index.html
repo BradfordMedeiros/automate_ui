@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>angular-widget-grid</title>
+    <title>Automate</title>
     <meta name="description" content="A flexible grid layout for responsive dashboards, based on AngularJS.">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>
@@ -27,7 +27,7 @@
     <div ng-controller="DemoController as demo">
 
       <div class="demo-header">
-        <a class="demo-title" >AUTOMATE</a>
+        <a class="demo-title" >AUTOMATE HOME</a>
         <div class="demo-config">
           <div class="demo-config-grid hidden-xs">
             <label for="columns">Columns</label>
@@ -56,11 +56,17 @@
 
        <wg-grid id="the_grid" columns="{{demo.columns}}" rows="{{demo.rows}}" options="demo.options" class="demo-grid" id="demo-grid">
 
-           <wg-widget wg-resizable wg-movable editable="{{demo.editable}}" ng-repeat="widget in demo.greetingWidgets" position="widget.position">
-               <test></test>
-           </wg-widget>
+           <wg-widget wg-resizable wg-movable editable="{{demo.editable}}" ng-repeat="widget in demo.greetingWidgets" position="widget.position" ng-if="$even">
+                <mqttcolor></mqttcolor>
 
+           </wg-widget>
            
+           <wg-widget wg-resizable wg-movable editable="{{demo.editable}}" ng-repeat="widget in demo.greetingWidgets" position="widget.position" ng-if="$odd">
+                <test></test>
+
+           </wg-widget>
+           
+         
        </wg-grid>
      </div>
  

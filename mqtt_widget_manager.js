@@ -75,9 +75,7 @@ mqtt_widgets_manager.prototype._add_subscription  = function(client, widget){
 };
 
 mqtt_widgets_manager.prototype._remove_subscription = function(client, subscriptions){
-    var the_subscriptions = [ ].concat(subscriptions);
-    for (var i = 0 ; i < subscriptions.length ; i++){
-    }
+    throw (new Error("not implemented"));
 };
 
 
