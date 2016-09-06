@@ -2,6 +2,10 @@
   width: device-width;
 }
 
+actionwid{
+    background: blue;
+}
+
 mqttcolor{
     border: 5px solid grey;
     opacity: 0.5;

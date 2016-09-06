@@ -53,7 +53,7 @@
 
      <div >
 
-
+        <test></test>
        <wg-grid id="the_grid" columns="{{demo.columns}}" rows="{{demo.rows}}" options="demo.options" class="demo-grid" id="demo-grid">
 
            <wg-widget wg-resizable wg-movable editable="{{demo.editable}}" ng-repeat="widget in demo.greetingWidgets" position="widget.position" ng-if="$even">
@@ -62,7 +62,7 @@
            </wg-widget>
            
            <wg-widget wg-resizable wg-movable editable="{{demo.editable}}" ng-repeat="widget in demo.greetingWidgets" position="widget.position" ng-if="$odd">
-                <test></test>
+                <actionwid>
 
            </wg-widget>
            

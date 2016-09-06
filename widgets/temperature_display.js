@@ -1,6 +1,6 @@
 
 var mqtt_interface = require("../mqtt_widget.js");
-var mqtt_wid = function(publish_function){   
+var mqtt_wid = function(){   
     var self = this;
     this.on_subscription= function(subscription){
         // this is the override
