@@ -1,0 +1,201 @@
+
+
+
+
+
+body{
+
+    background: rgb(70,70,70);
+    box-sizing: border-box;
+    overflow: hidden;
+    margin: 0px;
+    padding: 0px;
+}
+
+#side_panel{
+position: absolute;
+margin-top: 2vh;
+height: 75vh;
+width: 12%;
+background: linear-gradient(rgb(70,70,70),rgb(68,68,68));
+border-bottom: 3px solid rgb(80,80,80);
+border-right: 1px solid rgb(50,50,50);
+box-sizing: content-box;
+overflow-y: auto;
+padding-bottom: 3%;
+box-shadow: 0px 1px 1px 3px rgb(80,80,80);
+direction: rtl;
+}
+
+#side_panel::-webkit-scrollbar{
+background: white;
+width: 8%;
+border-radius: 0px;
+box-shadow: 0 0 10px rgb(30,30,30) inset;
+box-sizing: border-box;
+}
+
+#side_panel::-webkit-scrollbar-thumb{
+background: rgb(64,64,64);
+border-radius: 10px;
+border: 1px solid rgb(110,110,110);
+box-shadow: 0px 0px 30px rgb(40,40,40);
+box-sizing: border-box;
+
+}
+#side_panel::-webkit-scrollbar-thumb:hover{
+
+    border-radius: 30px;
+    box-shadow: 0px 0px 18px rgb(40,40,40) inset;
+    padding: 5%;
+    margin: 5%;
+}
+
+
+#side_panel::-webkit-scrollbar-track{
+    background: white;
+    border-radius: 30px;
+    border: 1px solid black;
+    width: 120%;
+    box-shadow: 0px 5px 18px rgb(40,40,40) inset;
+}
+
+
+.sp_element{
+padding: 5%;
+text-align: left;
+background: inherit;
+color: rgb(140,140,140);
+padding: 10%;
+box-shadow: 0 0 4px rgb(40,40,40) inset;
+font-family: "Courier New";
+font-size: 70%;
+border-bottom: 3px solid rgb(80,80,80);=E2=9A=99
+
+}
+.sp_element:hover{
+    animation-name: fade;
+    animation-duration: 0.2s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fade{
+from {
+color: rgb(140,140,140);
+background: rgb(64,64,64);
+font-size: 80%;
+
+}
+to {
+    color: rgb(180,180,180);
+    text-shadow: 0px 1px 3px rgb(140,140,140);
+    background: rgb(55,55,55);
+    font-size: 85%;
+    border-bottom: 3px solid rgb(80,80,80);
+}
+}
+
+
+
+
+
+
+
+
+
+#title_bar{
+    width: 100vw;
+    height: 10vh;
+    background: linear-gradient(rgb(60,60,60),rgb(55,55,55),rgb(60,60,60) 85%,red 99%);
+    box-sizing: border-box;
+    border-bottom:10px solid blue;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    border-bottom: 1px solid rgb(64,64,64);
+
+}
+
+
+
+#title_inner {
+    text-align: center;
+    height: 50%;
+    position: relative;
+    top: -2vh;
+}
+
+
+.title_text{
+
+    color: rgb(98,114,121);
+    text-transform: lowercase;
+    font-family: Perpetua;
+    text-shadow: 0px 1px 0px rgb(100,114,131);
+}
+
+
+#main{
+    background: linear-gradient( white 0%, black 9%);
+}
+
+
+#inner{
+    height: 93vh;
+    width: 100vw;
+    box-sizing: border-box;
+}
+
+
+
+#grid{
+   background: linear-gradient(rgb(60,60,60),rgb(50,50,50));
+   border-top: 1px solid rgb(40,40,40);
+   border-left: 3px solid rgb(50,50,50);
+   border-right: 3px solid rgb(50,50,50);
+   border-bottom: 3px solid rgb(50,50,50);
+   box-shadow: 0px 5px 10px black inset;
+   opacity: 0.9;
+   left: 13vw;
+   top: 13vh;
+   width: 85vw;
+   height: 85vh;
+   margin: 0px;
+   padding: 0px;
+   box-sizing: border-box;
+}   
+
+test{
+    padding: 30%;
+    opacity: 0.7;
+    background: linear-gradient(grey,lightslategray,lightslategrey);
+    color: whitesmoke;
+    font-family: "Engravers MT";
+    font-size: 250%;
+    border: 5px dotted black;
+    width: 4em;
+    height: 10em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+
+test h2{
+    border: 1px dashed black;
+    box-shadow: 2px 2px 2px 2px black;
+    text-align: center;
+    font-size: 1em;
+}
+
+wg-grid{
+    background: black;
+}
+wg-widget{
+    border: 1px solid black;
+}
+mqtt{
+    border: 1px solid blue;
+}
+

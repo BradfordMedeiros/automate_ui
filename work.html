@@ -1,0 +1,68 @@
+
+<html>
+	
+	<head>
+        <link rel="stylesheet" href="lib/angular-widget-grid.css"></link>
+
+		<link rel="stylesheet" type="text/css" href="automate_style0.css">
+	
+        <script src="main_browser.js"></script>
+        <script src="lib/angular-widget-grid.min.js"></script>
+        
+        <script>
+        app = angular.module("automate_ui",['widgetGrid']);
+       
+        initialize(app);
+        
+        app.controller("grid_controller", function($scope){
+            $scope.show_grid = true;
+        });
+    </script>
+    </head>
+	
+	<body ng-app="automate_ui">
+        
+        <div id="title_bar"><div id="title_inner"><p class="title_text">Automate</p></div></div>
+        
+		<div id="side_panel">
+			<div class="sp_element">Connect &#x23FB;</div>
+			<div class="sp_element">Settings</div>
+            <div class="sp_element">Settings</div>
+
+            <div class="sp_element">Settings</div>
+
+						<div class="sp_element">Settings</div>
+			<div class="sp_element">Settings</div>
+			<div class="sp_element">Settings</div>
+			
+			<div class="sp_element">Settings</div>
+			<div class="sp_element">Settings</div>
+			<div class="sp_element">Settings</div>
+
+		</div>		
+
+        
+         <wg-grid id="grid" columns="20" rows="15" options="{showGrid:false}">
+            <wg-widget wg-movable
+                       wg-resizable
+                       editable = "true"
+                       position="{ top: 2, left: 4, height: 3, width: 3 }">
+                <test></test>
+            </wg-widget>
+            <wg-widget wg-movable
+                       wg-resizable
+                       editable = "true"
+                       position="{ top: 8, left: 8, height: 1, width: 1 }">
+                <test></test>
+            </wg-widget>
+            <wg-widget wg-movable
+                       wg-resizable
+                       editable = "true"
+                       position="{ top: 8, left: 9, height: 1, width: 1 }">
+                <mqttcolor></mqttcolor>
+            </wg-widget>
+        </wg-grid>-->
+
+	</body>
+
+</html>

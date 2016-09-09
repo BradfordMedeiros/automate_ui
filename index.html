@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>Automate</title>
-    <meta name="description" content="A flexible grid layout for responsive dashboards, based on AngularJS.">
+
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="demo.css"></link>
@@ -54,6 +54,8 @@
      <div >
 
         <test></test>
+
+
        <wg-grid id="the_grid" columns="{{demo.columns}}" rows="{{demo.rows}}" options="demo.options" class="demo-grid" id="demo-grid">
 
            <wg-widget wg-resizable wg-movable editable="{{demo.editable}}" ng-repeat="widget in demo.greetingWidgets" position="widget.position" ng-if="$even">
@@ -62,7 +64,7 @@
            </wg-widget>
            
            <wg-widget wg-resizable wg-movable editable="{{demo.editable}}" ng-repeat="widget in demo.greetingWidgets" position="widget.position" ng-if="$odd">
-                <actionwid>
+                <test></test>
 
            </wg-widget>
            
