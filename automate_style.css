@@ -1,11 +1,12 @@
 
 
-
-
+:root{
+    --background-color: rgb(70,70,70)
+}
 
 body{
 
-    background: rgb(70,70,70);
+    background: var(--background-color);
     box-sizing: border-box;
     overflow: hidden;
     margin: 0px;
@@ -70,7 +71,7 @@ padding: 10%;
 box-shadow: 0 0 4px rgb(40,40,40) inset;
 font-family: "Courier New";
 font-size: 70%;
-border-bottom: 3px solid rgb(80,80,80);=E2=9A=99
+border-bottom: 2px solid rgb(80,80,80);=E2=9A=99
 
 }
 .sp_element:hover{

@@ -18,11 +18,10 @@ var test_react_wid = function(){
     
     this.get_react_component = function(){
        
-        return component;
+        return this.component;
     };
     
    
 };
 test_react_wid.prototype = mqtt_interface.prototype;
-
 module.exports =  test_react_wid;

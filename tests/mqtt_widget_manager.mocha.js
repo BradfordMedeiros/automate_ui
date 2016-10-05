@@ -1,7 +1,7 @@
 
 var assert = require("assert");
-var mqtt_widget_manager = require("./mqtt_widget_manager.js");
-var mqtt_widget = require("./mqtt_widget.js");
+var mqtt_widget_manager = require("../mqtt_widget_manager.js");
+var mqtt_widget = require("../mqtt_widget.js");
 
 var client_mock = function(){
     

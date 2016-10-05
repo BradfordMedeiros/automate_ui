@@ -12,6 +12,8 @@
         <script src="build/react.js"></script>
         <script src="build/react-dom.js"></script> <!-- i want to move this all to react because react seems simpler since i mainly wanted the templating feature.  will move grid away from angular-->
         
+        <script src="widgets/test.js"></script>
+        <script src="components/side_panel_browser.js"></script>
         <script>
         app = angular.module("automate_ui",['widgetGrid']);
        
@@ -20,35 +22,15 @@
         app.controller("grid_controller", function($scope){
             $scope.show_grid = true;
         });
-    </script>
+        </script>
     </head>
 	
 	<body ng-app="automate_ui">
         
         <div id="title_bar"><div id="title_inner"><p class="title_text">Automate</p></div></div>
         
-		<div id="side_panel">
-			<div class="sp_element">Connect &#x23FB;</div>
-			<div class="sp_element">Settings</div>
-            <div class="sp_element">Settings</div>
-
-            <div class="sp_element">Settings</div>
-
-						<div class="sp_element">Settings</div>
-			<div class="sp_element">Settings</div>
-			<div class="sp_element">Settings</div>
-			
-			<div class="sp_element">Settings</div>
-			<div class="sp_element">Settings</div>
-			<div class="sp_element">Settings</div>
-            <div class="sp_element">Settings</div>
-			<div class="sp_element">Settings</div>
-			<div class="sp_element">Settings</div><div class="sp_element">Settings</div>
-			<div class="sp_element">Settings</div>
-			<div class="sp_element">Settings</div><div class="sp_element">Settings</div>
-			<div class="sp_element">Settings</div>
-			<div class="sp_element">Settings</div>
-		</div>		
+        <div id="panel"></div>
+		
 
         
          <wg-grid id="grid" columns="20" rows="15" options="{showGrid:false, clickThrough:true}">

@@ -15,7 +15,7 @@ manager = new mqtt_widget_manager(client);
 wid = new temperature_display(client.publish.bind(client));
 color = new mqtt_color_widget(client.publish.bind(client));
 action = new test_action_widget(client.publish.bind(client));
-widgets = [wid,color,action]    
+widgets = [wid,action]    
 
 initialize = function(app){
     
