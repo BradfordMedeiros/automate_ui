@@ -1,0 +1,48 @@
+
+<html>
+	
+	<head>
+
+		
+        <script src="component_main_browser.js"></script>
+       
+	    <!-- We inline this style because this is a small test display class. This should never be big or expanded upon -->
+		<style>
+			
+			body{
+				background: black;
+				margin: 0px;
+			}
+			
+			#panel{
+				height: 20%;
+				width: 100%;
+			}
+		</style>
+		
+		<script>
+			$(()=>{
+				//var side_panel = React.createElement(components.side_panel);
+				//var side_panel_right = React.createElement(components.side_panel_right);
+				//var event_panel = React.createElement(components.event_panel);
+				var the_widget_scrollview = React.createElement(components.widget_scrollview)
+				console.log(the_widget_scrollview);
+				
+				//ReactDOM.render(side_panel,document.getElementById("side_panel"));
+				//ReactDOM.render(side_panel_right,document.getElementById("side_panel_right"));
+				//ReactDOM.render(event_panel, document.getElementById("the_event_panel"));
+				ReactDOM.render(the_widget_scrollview, document.getElementById("panel"));
+			})
+		</script>
+    </head>
+	
+	<body>
+        
+        
+        <div id="panel"></div>
+		
+		
+
+	</body>
+
+</html>

@@ -1,0 +1,22 @@
+
+
+.components_widget_scrollview{
+	background: blue;
+	border: 1px solid red;
+	box-sizing: border-box;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+}
+
+.widget_scrollview_widget_preview{
+	background: red;
+	border: 1px solid white;
+	width: 30%;
+	height: 100%;
+	box-sizing: border-box;
+	color: white;	
+	display: inline-block;
+	vertical-align: middle;
+}
+

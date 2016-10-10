@@ -1,0 +1,40 @@
+
+<html>
+	
+	<head>
+
+		<link rel="stylesheet" type="text/css" href="automate_style.css">
+		
+		<link rel="stylesheet" type="text/css" href="node_modules/react-grid-layout/css/styles.css">
+		<link rel="stylesheet" type="text/css" href="node_modules/react-resizable/css/styles.css">
+	
+
+        <script src="main_browser.js"></script>
+        <script src="component_main_browser.js"></script>
+       
+		
+		<script>
+			$(()=>{
+				//var side_panel = React.createElement(components.side_panel);
+				//var side_panel_right = React.createElement(components.side_panel_right);
+				//var event_panel = React.createElement(components.event_panel);
+				var the_grid = React.createElement(components.grid, {onLayoutChange:()=>console.log('changed')})
+				
+				//ReactDOM.render(side_panel,document.getElementById("side_panel"));
+				//ReactDOM.render(side_panel_right,document.getElementById("side_panel_right"));
+				//ReactDOM.render(event_panel, document.getElementById("the_event_panel"));
+				ReactDOM.render(the_grid, document.getElementById("panel"));
+			})
+		</script>
+    </head>
+	
+	<body>
+        
+        
+        <div id="panel"></div>
+		
+		
+
+	</body>
+
+</html>

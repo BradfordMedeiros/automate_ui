@@ -1,0 +1,59 @@
+<html>
+	
+	<head>
+        <link rel="stylesheet" href="lib/angular-widget-grid.css"></link>
+
+		<link rel="stylesheet" type="text/css" href="automate_style.css">
+	
+	
+	
+        <script src="main_browser.js"></script>
+        <script src="component_main_browser.js"></script>
+		<script src="widget_main_browser.js"></script>
+		
+		
+     
+		
+		<script>
+			$(()=>{
+				var side_panel = React.createElement(components.side_panel);
+				var side_panel_right = React.createElement(components.side_panel_right);
+				var event_panel = React.createElement(components.event_panel);
+				var the_grid = React.createElement(components.grid,{ onLayoutChange: (x)=>console.log('changed')})
+				
+				ReactDOM.render(side_panel,document.getElementById("side_panel"));
+				ReactDOM.render(side_panel_right,document.getElementById("side_panel_right"));
+				ReactDOM.render(event_panel, document.getElementById("the_event_panel"));
+				ReactDOM.render(the_grid, document.getElementById("panel"));
+			})
+		</script>
+    </head>
+	
+	<body>
+        
+        <div id="title_bar"><div id="title_inner"><p class="title_text">Automate</p></div></div>
+        
+        <div id="panel"></div>
+		
+		<div id="side_panel"></div>
+        <div id="side_panel_right"></div>
+	
+		<div id="the_event_panel">
+			<script>
+				$($("#the_event_panel").click(()=>{
+					console.log("clicked")
+					if ($("the_event_panel").hasClass("the_event_panel_animate_state")){
+						console.log("removing");
+						$("the_event_panel").removeClass('the_event_panel_animate_state');
+					}else{
+						console.log('adding');
+						$("the_event_panel").addClass('the_event_panel_animate_state');
+					}
+					
+				}));
+			</script>
+		</div>
+
+	</body>
+
+</html>

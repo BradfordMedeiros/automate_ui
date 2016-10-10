@@ -1,0 +1,99 @@
+
+.components_side_panel{
+	
+	box-sizing: border-box;
+	
+}
+
+
+.components_side_panel_inner_text{
+	
+	height: 100%;
+	width: 100%;
+	background: linear-gradient(rgb(70,70,70),rgb(68,68,68));
+	border-bottom: 3px solid rgb(80,80,80);
+	border-right: 1px solid rgb(50,50,50);
+	box-sizing: content-box;
+	overflow-y: auto;
+	padding-bottom: 3%;
+	box-shadow: 0px 1px 1px 3px rgb(80,80,80);
+	direction: rtl;
+	box-sizing: border-box;
+}
+
+.components_side_panel_inner_text::-webkit-scrollbar{
+	background: white;
+	width: 6%;
+	border-radius: 0px;
+	box-shadow: 0 0 10px rgb(30,30,30) inset;
+	box-sizing: border-box;
+}
+
+.components_side_panel_inner_text::-webkit-scrollbar-thumb{
+	background: rgb(80,80,80);
+	border-radius: 10px;
+	border: 1px solid rgb(110,110,110);
+	box-shadow: 0px 0px 30px rgb(40,40,40);
+	box-sizing: border-box;
+
+}
+
+.components_side_panel_inner_text::-webkit-scrollbar-thumb:hover{
+
+    border-radius: 30px;
+    box-shadow: 0px 0px 18px rgb(40,40,40) inset;
+    padding: 5%;
+    margin: 5%;
+}
+
+
+.components_side_panel_inner_text::-webkit-scrollbar-track{
+    background: white;
+    border: 1px solid black;
+    box-shadow: 0px 5px 18px rgb(40,40,40) inset;
+}
+
+
+
+.components_side_panel_sp_element{
+	padding: 5%;
+	text-align: left;
+	background: inherit;
+	color: rgb(140,140,140);
+	padding: 10%;
+	box-shadow: 0 0 4px rgb(40,40,40) inset;
+	font-family: "Courier New";
+	font-size: 70%;
+	border-bottom: 2px solid rgb(80,80,80);
+	height: 2%;
+	-webkit-user-select: none; /* Chrome/Safari */        
+	-moz-user-select: none; /* Firefox */
+	-ms-user-select: none; /* IE10+ */
+}
+
+.components_side_panel_sp_element:hover{
+    animation-name: components_side_panel_fade;
+    animation-duration: 0.1s;
+    animation-fill-mode: forwards;
+	cursor: pointer;
+}
+
+
+
+
+@keyframes components_side_panel_fade{
+	from {
+		color: rgb(140,140,140);
+		background: rgb(64,64,64);
+		font-size: 80%;
+	}
+	to {
+		color: rgb(180,180,180);
+		text-shadow: 0px 1px 3px rgb(140,140,140);
+		background: rgb(55,55,55);
+		font-size: 85%;
+	}
+}
+
+
+

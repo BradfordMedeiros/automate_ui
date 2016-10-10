@@ -1,37 +1,40 @@
 
 
-var React = require("../build/react.js");
+var event_emitter = require("../internal_communication.js");
+var React = require("react");
+var $ =  require("jquery");
+
+$('head').append('<link rel="stylesheet" type="text/css" href="components/side_panel.css">');
+
+function vibrate(element_name){
+	window.navigator.vibrate(100);
+	if (window.notification){
+		window.notification.vibrate(100);
+	}
+	console.log('vibrating');
+	console.log("click:"+element_name);
+	event_emitter.emit("click:"+element_name);
+
+}
+
+function generate_element (index){
+	var element_name = "settings"+index;
+	return React.createElement("div",{onClick:()=>vibrate(element_name),key:index,className:"components_side_panel_sp_element"}, "Settings")
+}
 
 var panel = React.createClass({
-         
-  
+
     render: function(){
-            //<div id="side_panel">
-			//<div class="sp_element">Connect &#x23FB;</div>
-			//<div class="sp_element">Settings</div>
-            //<div class="sp_element">Settings</div>
-            
-            var elements = [    React.createElement("div",{key:0,className:"sp_element"}, "Connect"),
-                                React.createElement("div",{key:1,className:"sp_element"}, "Settings"),
-                                React.createElement("div",{key:2,className:"sp_element"}, "Settings"),
-                                React.createElement("div",{key:3,className:"sp_element"}, "Settings"),
-                                React.createElement("div",{key:4,className:"sp_element"}, "Settings"),
-                                React.createElement("div",{key:5,className:"sp_element"}, "Settings"),
-                                React.createElement("div",{key:6,className:"sp_element"}, "Settings"),
-                                React.createElement("div",{key:7,className:"sp_element"}, "Settings"),
-                                React.createElement("div",{key:8,className:"sp_element"}, "Settings"),
-                                React.createElement("div",{key:9,className:"sp_element"}, "Settings"),
-                                React.createElement("div",{key:10,className:"sp_element"}, "Settings"),
-                                React.createElement("div",{key:11,className:"sp_element"}, "Settings"),
-                                React.createElement("div",{key:12,className:"sp_element"}, "Settings"),
-                                React.createElement("div",{key:13,className:"sp_element"}, "Settings"),
-                                React.createElement("div",{key:14,className:"sp_element"}, "Settings1")
-                            ] ;
-            return React.createElement('div',{id:"side_panel"},elements);
-        }
-        
+			
+            var elements = [ ] ;
+			
+			for (var i = 0 ; i < 50; i++){
+				elements.push(generate_element(i));
+			}
+            var inner = React.createElement('div',{className:"components_side_panel_inner_text"},elements);
+			var side_panel = React.createElement("div",{className:"components_side_panel"},inner);
+			return side_panel;
+        }        
     });
 
-var the_side_panel = React.createElement(panel,{});
-
-window.the_side_panel = the_side_panel;
+module.exports = panel;
