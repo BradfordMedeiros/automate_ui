@@ -1,5 +1,7 @@
 
-var react = require("../build/react.js");
+var react = require("react");
+var $ = require("jquery");
+$('head').append('<link rel="stylesheet" type="text/css" href="widgets/test_react_widget.css">');
 
 var mqtt_interface = require("../mqtt_widget.js");
 var test_react_wid = function(){   
@@ -20,7 +22,7 @@ var test_react_wid = function(){
        
         return this.component;
     };
-    
+
    
 };
 test_react_wid.prototype = mqtt_interface.prototype;
