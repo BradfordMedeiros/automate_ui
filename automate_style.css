@@ -7,19 +7,23 @@
     --main-color: rgb(var(--main-color_r), var(--main-color_g),var(--main-color_b))
 }
 
-
+body{
+	background: rgb(40,40,40);
+	padding: 0;
+	margin: 0;
+}
 #logo{
+
+	font-family: Didot,Didot LT STD,Hoefler Text,Garamond,Times New Roman,serif; 
 	position: absolute;
-	top: 97vh;
+	top: 96vh;
 	left: 45vw;
 	text-align: center;
-	z-index: 20;
 	color: red;
 	font-size: 150%;
 	color: white;
-	font-family: Didot,Didot LT STD,Hoefler Text,Garamond,Times New Roman,serif; 
 	opacity: 0.2;
-	z-index: 1;
+	z-index: 1000;
 
 }
 
@@ -29,7 +33,7 @@ body{
 }
 
 #the_scrollview{
-	height: 90vh;
+	height: 95vh;
 	width: 100vw;
 
 }

@@ -43,7 +43,11 @@
         <div id="low_bar"></div>
 		<div id="logo">automate</div>
 		
-
+        <script>
+            $(()=>{
+                $("div").click(()=>$(".bar, #top_bar_accent").toggleClass('active'))
+            });
+        </script>
 	</body>
 
 </html>
