@@ -1,103 +1,80 @@
 
 
 :root{
-    --background-color: rgb(70,70,70)
+	--main-color_r:40;
+	--main-color_g:40;
+	--main-color_b: calc(40 + 100);
+   
 }
+
+html{
+	background: red;
+}
+
 
 body{
 
-    background: var(--background-color);
+    background: rbg(inherit,0,0);
     box-sizing: border-box;
     overflow: hidden;
     margin: 0px;
     padding: 0px;
 }
 
+#panel{ 
+	background: rgb(80,80,80);
+	border: 1px solid black;
+	box-shadow: 1px 10px 30px 10px black;
+	width: 64vw;
+	height: 80vh;
+	margin-left: 19vw;
+	margin-top: -1vh;
+	position: absolute;
+	overflow-y: auto;
+}
+
+
+
+#panel::-webkit-scrollbar{
+	background: white;
+	width: 0.5%;
+	border-radius: 0px;
+	box-shadow: 0 0 10px rgb(30,30,30) inset;
+	box-sizing: border-box;
+}
+
+#panel::-webkit-scrollbar-thumb{
+	background: rgb(80,80,80);
+	border-radius: 10px;
+	border: 1px solid rgb(110,110,110);
+	box-shadow: 0px 0px 30px rgb(40,40,40);
+	box-sizing: border-box;
+
+}
+
 #side_panel{
-position: absolute;
-margin-top: 2vh;
-height: 75vh;
-width: 12%;
-background: linear-gradient(rgb(70,70,70),rgb(68,68,68));
-border-bottom: 3px solid rgb(80,80,80);
-border-right: 1px solid rgb(50,50,50);
-box-sizing: content-box;
-overflow-y: auto;
-padding-bottom: 3%;
-box-shadow: 0px 1px 1px 3px rgb(80,80,80);
-direction: rtl;
+	position: absolute;
+	margin-top: -1vh;
+	height: 80vh;
+	width: 18%;
+	background: linear-gradient(rgb(70,70,70),rgb(68,68,68));
+	border-bottom: 3px solid rgb(80,80,80);
+	border-right: 1px solid rgb(50,50,50);
+	box-sizing: content-box;
+	overflow-y: auto;
+	padding-bottom: 3%;
+	box-shadow: 1px 1px 10px 3px rgb(80,80,80);
+	direction: rtl;
 }
 
-#side_panel::-webkit-scrollbar{
-background: white;
-width: 8%;
-border-radius: 0px;
-box-shadow: 0 0 10px rgb(30,30,30) inset;
-box-sizing: border-box;
+#side_panel_right{
+    height: 82vh;
+    width: 18%;
+    left: 84vw;
+    top: 8vh;
+    z-index:1;
+    position: absolute;
 }
-
-#side_panel::-webkit-scrollbar-thumb{
-background: rgb(64,64,64);
-border-radius: 10px;
-border: 1px solid rgb(110,110,110);
-box-shadow: 0px 0px 30px rgb(40,40,40);
-box-sizing: border-box;
-
-}
-#side_panel::-webkit-scrollbar-thumb:hover{
-
-    border-radius: 30px;
-    box-shadow: 0px 0px 18px rgb(40,40,40) inset;
-    padding: 5%;
-    margin: 5%;
-}
-
-
-#side_panel::-webkit-scrollbar-track{
-    background: white;
-    border-radius: 30px;
-    border: 1px solid black;
-    width: 120%;
-    box-shadow: 0px 5px 18px rgb(40,40,40) inset;
-}
-
-
-.sp_element{
-padding: 5%;
-text-align: left;
-background: inherit;
-color: rgb(140,140,140);
-padding: 10%;
-box-shadow: 0 0 4px rgb(40,40,40) inset;
-font-family: "Courier New";
-font-size: 70%;
-border-bottom: 2px solid rgb(80,80,80);=E2=9A=99
-
-}
-.sp_element:hover{
-    animation-name: fade;
-    animation-duration: 0.2s;
-    animation-fill-mode: forwards;
-}
-
-@keyframes fade{
-from {
-color: rgb(140,140,140);
-background: rgb(64,64,64);
-font-size: 80%;
-
-}
-to {
-    color: rgb(180,180,180);
-    text-shadow: 0px 1px 3px rgb(140,140,140);
-    background: rgb(55,55,55);
-    font-size: 85%;
-    border-bottom: 3px solid rgb(80,80,80);
-}
-}
-
-
-
 
 
 
@@ -148,8 +125,44 @@ to {
 }
 
 
-
 #grid{
+  background: pink;
+  width: 60%;
+  height: 80%;
+  margin-left: 20vw;
+  margin-top: 3vh;
+}  
+
+#the_event_panel{
+	
+	background: black;
+	border: 5px solid grey;
+	width: 100%;
+	height: 80%;
+	margin-top: 80vh;
+	position: relative;
+	box-shadow: 5px 5px 5px grey inset;
+	box-sizing: border-box;
+}
+
+.the_event_panel_animate_state{
+	
+	animation: event_panel_slide 0.5s forwards;
+}
+
+
+
+@keyframes event_panel_slide{
+	from {
+		margin-top: 80vh;
+	}
+	to {
+		margin-top: 10vh;
+	}
+}
+
+
+/*#grid{
    background: linear-gradient(rgb(60,60,60),rgb(50,50,50));
    border-top: 1px solid rgb(40,40,40);
    border-left: 3px solid rgb(50,50,50);
@@ -157,14 +170,14 @@ to {
    border-bottom: 3px solid rgb(50,50,50);
    box-shadow: 0px 5px 10px black inset;
    opacity: 0.9;
-   left: 13vw;
+   left: 20vw;
    top: 13vh;
-   width: 85vw;
+   width: 60vw;
    height: 85vh;
    margin: 0px;
    padding: 0px;
    box-sizing: border-box;
-}   
+}   */
 
 test{
     padding: 30%;
