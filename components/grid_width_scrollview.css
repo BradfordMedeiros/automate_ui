@@ -1,0 +1,30 @@
+
+.main_container{
+    height: 100%;
+    width: 100%;
+    overflow-y: auto;
+    box-sizing: border-box;
+    border: 0.2em solid grey;
+    background: var(--main-color);
+
+}
+
+.components_grid_width_scrollview_container{
+    height: 20%;
+    margin-top: 0px;
+    padding-top: 0px;
+    box-sizing: border-box;
+
+}
+
+.test_div{
+    height: 80%;
+    width: 100%;
+    box-sizing: border-box;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.test_div::-webkit-scrollbar { 
+    display: none;
+}

@@ -1,12 +1,12 @@
 
 
 .components_widget_scrollview{
-	background: blue;
-	border: 1px solid red;
+	background: var(--main-color);
 	box-sizing: border-box;
     overflow-x: scroll;
     overflow-y: hidden;
     white-space: nowrap;
+    border-bottom: 0.3em solid grey;
 }
 
 .widget_scrollview_widget_preview{
@@ -18,5 +18,11 @@
 	color: white;	
 	display: inline-block;
 	vertical-align: middle;
+	background: var(--main-color);
+    box-shadow: 0.5em 0em 2em .5em black;
+	opacity: 0.50;
 }
 
+.components_widget_scrollview::-webkit-scrollbar { 
+    display: none; 
+}

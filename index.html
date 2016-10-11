@@ -16,42 +16,33 @@
 		<script>
 			$(()=>{
 				var side_panel = React.createElement(components.side_panel);
-				var side_panel_right = React.createElement(components.side_panel_right);
 				var event_panel = React.createElement(components.event_panel);
 				var the_grid = React.createElement(components.grid,{ onLayoutChange: (x)=>console.log('changed')})
-				
-				ReactDOM.render(side_panel,document.getElementById("side_panel"));
-				ReactDOM.render(side_panel_right,document.getElementById("side_panel_right"));
-				ReactDOM.render(event_panel, document.getElementById("the_event_panel"));
-				ReactDOM.render(the_grid, document.getElementById("panel"));
+				var scrollview = React.createElement(components.widget_scrollview);
+                var grid_with_s = React.createElement( components.grid_with_scrollview);
+				//ReactDOM.render(side_panel,document.getElementById("side_panel"));
+				//ReactDOM.render(event_panel, document.getElementById("the_event_panel"));
+				//ReactDOM.render(the_grid, document.getElementById("panel"));
+                //ReactDOM.render(scrollview, document.getElementById("the_scrollview"));
+                ReactDOM.render(grid_with_s, document.getElementById("the_scrollview"));
 			})
 		</script>
     </head>
 	
 	<body>
         
-        <div id="title_bar"><div id="title_inner"><p class="title_text">Automate</p></div></div>
+        <!--<div id="title_bar"><div id="title_inner"><p class="title_text">Automate</p></div></div>
+        -->
         
-        <div id="panel"></div>
+        <div id="top_bar"></div>
+        <div id="top_bar_accent"></div>
+        <div id="left_bar" class="bar"></div>
+        <div id="right_bar" class="bar"></div>
+        
+        <div id="the_scrollview"></div>
+        <div id="low_bar"></div>
+		<div id="logo">automate</div>
 		
-		<div id="side_panel"></div>
-        <div id="side_panel_right"></div>
-	
-		<div id="the_event_panel">
-			<script>
-				$($("#the_event_panel").click(()=>{
-					console.log("clicked")
-					if ($("the_event_panel").hasClass("the_event_panel_animate_state")){
-						console.log("removing");
-						$("the_event_panel").removeClass('the_event_panel_animate_state');
-					}else{
-						console.log('adding');
-						$("the_event_panel").addClass('the_event_panel_animate_state');
-					}
-					
-				}));
-			</script>
-		</div>
 
 	</body>
 
