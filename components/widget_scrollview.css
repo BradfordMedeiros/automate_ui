@@ -6,23 +6,39 @@
     overflow-x: scroll;
     overflow-y: hidden;
     white-space: nowrap;
-    border-bottom: 0.3em solid grey;
+    width: 100%;
+    height: 70%;
 }
 
 .widget_scrollview_widget_preview{
 	background: red;
 	border: 1px solid white;
-	width: 30%;
-	height: 100%;
+	width: 13%;
+	height: 70%;
+	margin: 2.5%;
 	box-sizing: border-box;
 	color: white;	
 	display: inline-block;
 	vertical-align: middle;
 	background: var(--main-color);
-    box-shadow: 0.5em 0em 2em .5em black;
-	opacity: 0.50;
+	opacity: 0.5;
+	overflow-x: hidden;
+	overflow-y: hidden;
+	padding: 0.3em;
+
 }
+.widget_scrollview_widget_preview::after{
+	content:"";
+	position: absolute;
+	margin-top: -12%;
+	margin-left: 5%;
+	font-size: 500%;
+	color: white;
+	font-family: "Arial";
+}
+
 
 .components_widget_scrollview::-webkit-scrollbar { 
     display: none; 
 }
+

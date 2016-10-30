@@ -1,0 +1,15 @@
+
+
+
+.widgets_temperature_display_outer{
+    background: linear-gradient(rgb(150,73,20),rgb(130,63,10));
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+.widgets_temperature_display_text{
+    top: 45%;
+    color: white;
+    position: relative;
+}

@@ -4,8 +4,9 @@
     width: 100%;
     overflow-y: auto;
     box-sizing: border-box;
-    border: 0.2em solid grey;
     background: var(--main-color);
+	padding-top: 0.5em;
+
 
 }
 
@@ -18,7 +19,7 @@
 }
 
 .test_div{
-    height: 80%;
+    height: 100%;
     width: 100%;
     box-sizing: border-box;
     overflow-y: auto;

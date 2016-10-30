@@ -1,0 +1,21 @@
+
+
+
+.widgets_test_react_widget{
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    background: white;
+    padding-top: 15%;
+    padding-left: 25%;
+    color: black;
+}
+
+.widgets_test_react_widget_fullscreen{
+    width: 100%;
+    height: 100%;
+    color: yellow;
+    padding: 5%;
+    font-size: 150%;
+    background: linear-gradient(rgb(160,160,160),rgb(90,90,90));
+}

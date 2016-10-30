@@ -16,6 +16,5 @@ mqtt_interface.prototype.get_subscriptions  = function(){
     throw (new Error("cannot implement an interface directly - extend the prototype chain and override methods"));
 };
 
-
 module.exports = mqtt_interface;
 

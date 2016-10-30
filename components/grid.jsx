@@ -28,32 +28,40 @@ var AddRemoveLayout = React.createClass({
 
   getInitialState() {
     return {
-      items: [0, 1, 2, 3, 4].map(function(i, key, list) {
+      items: [].map(function(i, key, list) {
         return {i: i.toString(), x: i * 2, y: 0, w: 2, h: 2, add: i === (list.length - 1).toString()};
       }),
       newCounter: 0
     };
   },
 
-  createElement(el) {
-    var removeStyle = {
+  createElement(el) { 
+    
+	console.log("creating element");
+	console.log(el);
+	var removeStyle = {
       position: 'absolute',
       right: '2px',
       top: 0,
       cursor: 'pointer'
     };
+	
+	
     var i = el.add ? '+' : el.i;
+	
     return (
-      <div id={'test_widget_'+i} key={i} data-grid={el}>
-        {el.add ?
-          <span className="add text" onClick={this.onAddItem} title="You can add an item by clicking here, too.">Add +</span>
-        : <span className="text">{i}</span>}
-        <span className="remove" style={removeStyle} onClick={this.onRemoveItem.bind(this, i)}>x</span>
+      <div className="components_grid_outer_widget" id={'test_widget_'+i} key={i} data-grid={el}>
+		{/*<span className="text">{i}</span>*/}		
+		<div className="components_grid_inner_widget" onDoubleClick={()=>{console.log('should go fullscreen');window.set_fullscreen(el.fullscreen_content)}}> {el.content} </div>
+		<span className="remove" style={removeStyle} onClick={this.onRemoveItem.bind(this, i)}>x</span>
+
       </div>
     );
   },
 
-  onAddItem() {
+  onAddItem(x,y) {
+  
+	console.log("on add item called: ",y);
     /*eslint no-console: 0*/
     console.log('adding', 'n' + this.state.newCounter);
     this.setState({
@@ -63,7 +71,10 @@ var AddRemoveLayout = React.createClass({
         x: this.state.items.length * 2 % (this.state.cols || 12),
         y: Infinity, // puts it at the bottom
         w: 2,
-        h: 2
+        h: 2,
+		is_fullscreen: false,
+		content: y=== true? x.get_react_component() : "default text",
+		fullscreen_content: y=== true? x.get_fullscreen_react_component():null
       }),
       // Increment the counter to ensure key is always unique.
       newCounter: this.state.newCounter + 1
@@ -89,9 +100,10 @@ var AddRemoveLayout = React.createClass({
   },
 
   render() {
+	console.log("widgets in grid is: ",this.props.widgets);
     return (
       <div>
-        <button onClick={this.onAddItem}>Add Item</button>
+	  {/*<button onClick={this.onAddItem}>Add Item</button>*/}
         <ResponsiveReactGridLayout onLayoutChange={this.onLayoutChange} onBreakpointChange={this.onBreakpointChange}
             {...this.props}>
           {_.map(this.state.items, this.createElement)}

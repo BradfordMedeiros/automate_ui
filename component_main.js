@@ -10,7 +10,8 @@ var components = {
 	event_panel: require("./components/event_panel.jsx"),
 	grid: require("./components/grid.jsx"),
 	widget_scrollview: require("./components/widget_scrollview.jsx"),
-    grid_with_scrollview: require("./components/grid_width_scrollview.jsx")
+    grid_with_scrollview: require("./components/grid_width_scrollview.jsx"),
+	content_selection_bar: require("./components/content_selection_bar.jsx")
 
 }
 

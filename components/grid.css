@@ -5,3 +5,19 @@
 	border: 1px solid black;
 	
 }
+
+.components_grid_inner_widget  {
+	background: rgb(120,120,120);
+	opacity: 0.8;
+	width: 100%;
+	height: 100%;
+	box-sizing: border-box;
+	border: 1px solid rgb(180,180,180);
+	z-index:1;
+}
+
+.components_grid_fullscreen{
+	width: 100%;
+	height: 100%;
+	background: orange;
+}	
