@@ -1,5 +1,0 @@
-npm install -g browserify 
-npm install --save babelify babel-preset-react
-
-browserify -t [ babelify --presets [ react ] ] src/index.js -o build/app.js
-
