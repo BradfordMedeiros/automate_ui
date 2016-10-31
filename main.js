@@ -1,26 +1,43 @@
 /**
     Shitty disposable main method so we have access to this stuff from the console
 **/
-mqtt_interface = require("./mqtt_widget.js");
-temperature_display = require("./widgets/temperature_display.js");
-mqtt_color_widget = require("./widgets/color_widget.js");
-test_action_widget = require("./widgets/test_widget.js");
-angular  = require("angular");
-mqtt_widget_manager = require("./mqtt_widget_manager.js");
+import mqtt_interface from "./mqtt_widget.js";
+import temperature_display from "./widgets/temperature_display.js";
+import mqtt_color_widget from "./widgets/color_widget.js";
 
-var mqtt = require("mqtt");
+import mqtt from "mqtt";
+import test_action_widget from "./widgets/test_widget.js";
+import mqtt_widget_manager from "./mqtt_widget_manager.js";
+
+import { components } from "./component_main.js";
+
+import jquery from "jquery";
+import react from "react";
+import reactDom from "react-dom";
+import widgets from "./widget_main.js";
+
+window.$ = jquery;
+window.React = react;
+window.ReactDOM = reactDom;
+window.components = components;
+window.widgets = widgets;
+
+
+console.log("components ",components);
+console.log("jquery: ",jquery);
+
 var client = mqtt.connect("mqtt://localhost:3000");
 
-manager = new mqtt_widget_manager(client);
-wid = new temperature_display(client.publish.bind(client));
-color = new mqtt_color_widget(client.publish.bind(client));
-action = new test_action_widget(client.publish.bind(client));
-widgets = [wid,action]    
+let manager = new mqtt_widget_manager(client);
+let wid = new temperature_display(client.publish.bind(client));
+let color = new mqtt_color_widget(client.publish.bind(client));
+let action = new test_action_widget(client.publish.bind(client));
+let the_widgets = [wid,action]    
 
-initialize = function(app){
+let initialize = function(app){
     
     for (var i = 0 ; i < widgets.length; i++){
-        widgets[i].initialize(app);
+        the_widgets[i].initialize(app);
     }  
     
     for ( var i = 0 ; i < widgets.length ; i++){

@@ -15,11 +15,7 @@ var components = {
 
 }
 
-window.React= require("react");
-window.ReactDOM = require("react-dom");
-window.components = components;
-window.components.event_emitter= event_emitter;
-window.$ = require("jquery");
+export { components }
 
 
 

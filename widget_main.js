@@ -4,5 +4,6 @@ var widgets = {
 	temperature_display: require("./widgets/temperature_display.jsx")
 };
 
-window.widgets = widgets;
+
 module.exports = widgets;
+

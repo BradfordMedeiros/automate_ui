@@ -1,8 +1,6 @@
 
 
 
-
-//var event_emitter = require("../internal_communication.js");
 var React = require("react");
 var $ =  require("jquery");
 
