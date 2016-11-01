@@ -104,7 +104,7 @@ var AddRemoveLayout = React.createClass({
     return (
       <div>
 	  {/*<button onClick={this.onAddItem}>Add Item</button>*/}
-        <ResponsiveReactGridLayout onLayoutChange={this.onLayoutChange} onBreakpointChange={this.onBreakpointChange}
+        <ResponsiveReactGridLayout margin={[0,0]} verticalCompact={true} onLayoutChange={this.onLayoutChange} onBreakpointChange={this.onBreakpointChange}
             {...this.props}>
           {_.map(this.state.items, this.createElement)}
         </ResponsiveReactGridLayout>
